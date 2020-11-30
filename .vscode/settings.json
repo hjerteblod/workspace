@@ -1,0 +1,19 @@
+{
+    "intelephense.environment.phpVersion": "7.3.0",
+    "intelephense.phpdoc.propertyTemplate": {
+        "summary": "${1:Undocumented variable}",
+        "tags": ["@var ${SYMBOL_TYPE/(null)*(\\|)*(.*)/$3$2$1/g}"]
+    },
+    "intelephense.phpdoc.classTemplate": {
+        "summary": "${1:Class ${TM_FILENAME/(.*)\\..+$/$1/}}",
+        "tags": [""]
+    },
+    "intelephense.phpdoc.functionTemplate": {
+        "summary": "${1:Undocumented function}",
+        "tags": [
+            "@param ${SYMBOL_TYPE/(null)*(\\|)*(.*)/$3$2$1/g} $SYMBOL_NAME",
+            "@return ${SYMBOL_TYPE/(null)*(\\|)*(.*)/$3$2$1/g}",
+            "@throws ${1:$SYMBOL_TYPE}"
+        ]
+    }
+}

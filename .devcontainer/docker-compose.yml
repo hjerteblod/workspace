@@ -1,0 +1,7 @@
+version: "2"
+services:
+  php:
+    environment:
+      XDEBUG_CONFIG: "remote_host=localhost remote_port=9001"
+    volumes:
+      - .:/workspace
