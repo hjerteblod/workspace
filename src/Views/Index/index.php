@@ -6,51 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
-    <style>
-        body {
-            font-family: "Open Sans", Helvetica, Arial, sans-serif;
-            font-weight: 300;
-            font-size: 15px;
-            line-height: 30px;
-            color: #777;
-
-        }
-
-        table,
-        th,
-        td {
-            border: 3px solid black;
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 
 <body>
-    <form method="POST" action="/bankbalance/total">
+    <form id="app" @submit="checkForm" action="/bankbalance/total" method="post" novalidate="true">
+        <!-- soll erst laden, wenn keine Fehler mehr sind-->
+        
         <h1>Geldautomat</h1>
 
         <p>
-            <h3>Login</h3>
+            <h2>Login</h2>
         </p>
 
-        <fieldset>
-            <input placeholder="Username" required type="text" name="Username" />
-        </fieldset><span class="error"><?= $username_error ?></span>
+        <p v-if="errors.length">
+            <ul>
+                <li v-for="error in errors">{{ error }}</li>
+            </ul>
+        </p>
 
-        <fieldset>
-            <input placeholder="Password" required type="password" name="Password" min="0000" max="9999" />
-        </fieldset><span class="error"><?= $password_error ?></span>
+        <p>
+            <label for="username">Username</label>
+            <input id="username" v-model="username" type="text" name="username">
+        </p>
 
-        <p><input type="submit" value="Login" name="submit" />
-            <!-- TODO hier muss ich noch die Fehler abfangen // Error für number allgemein?-->
+        <p>
+            <label for="password">Password</label>
+            <input id="password" v-model="password" type="password" name="password">
+        </p>
 
+        <p>
+            <input type="submit" value="Login">
+        </p>
 
+        <script src="/index.js"></script>
+
+    </form>
 </body>
 
 </html>

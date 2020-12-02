@@ -19,6 +19,8 @@ class BankbalanceController extends \CashMachine\Core\Controller
         $db = Database::getInstance();
         
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            
         }
 
         require __DIR__ . '/../Views/Bankbalance/total.php';
