@@ -1,5 +1,6 @@
-body {
-    background-color: lightblue;
+#index {
+    background-image: url("https://thephilosophicalsalon.com/wp-content/uploads/2018/01/3407402643_f787566bb8_o.jpg");
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   
   h1 {
@@ -12,7 +13,6 @@ body {
     font-size: 20px;
   }
 
-
   table,
   th,
   td {
@@ -24,4 +24,25 @@ body {
   td {
       padding: 10px;
       text-align: center;
+  }
+
+input[type=submit] {
+ background-color: whitesmoke;
+}
+
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: right; 
+
+  }
+  div.transbox  {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  padding-left: 1em;
+  padding-right: 1em; 
+  opacity: 0.8;
   }

@@ -16,7 +16,7 @@ const app = new Vue({
             }
 
             if (!this.password) {
-                this.errors.push("Bitte Password eingeben.");
+                this.errors.push("Bitte Passwort eingeben.");
             }
 
             if (!this.errors.length) {

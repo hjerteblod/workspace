@@ -9,15 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 
-<body>
+<body id="index">
     <form id="app" @submit="checkForm" action="/bankbalance/total" method="post" novalidate="true">
         <!-- soll erst laden, wenn keine Fehler mehr sind-->
-        
-        <h1>Geldautomat</h1>
 
-        <p>
-            <h2>Login</h2>
-        </p>
+        <h1>Geldautomat</h1><br><br>
+
 
         <p v-if="errors.length">
             <ul>
@@ -25,20 +22,19 @@
             </ul>
         </p>
 
-        <p>
-            <label for="username">Username</label>
-            <input id="username" v-model="username" type="text" name="username">
-        </p>
+        <div class="container">
+            <div class="transbox">
+                <p>
+                    <label for="username">Username:</label>
+                    <input id="username" v-model="username" type="text" name="username"><br>
 
-        <p>
-            <label for="password">Password</label>
-            <input id="password" v-model="password" type="password" name="password">
-        </p>
+                    <label for="password">Password:</label>
+                    <input id="password" v-model="password" type="password" name="password"><br><br>
 
-        <p>
-            <input type="submit" value="Login">
-        </p>
-
+                    <input type="submit" value="Login">
+                </p>
+            </div>
+        </div>
         <script src="/index.js"></script>
 
     </form>
